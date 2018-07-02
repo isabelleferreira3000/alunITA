@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8">
+	  <title>Notas | AlunITA</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK.css') }}">
+	</head>
+
+	<body>
+		<section id="DirecionamentoTelas" class="BackGr BackImage">
+			<!-- Cabeçalho do app -->
+			<div class="barra-principal valign-wrapper yellow darken-2">
+				<div class="container">
+					<a href="principal"><img src="../static/resources/logo2.png" class="logoCab" width="89.4px" height="48.8px"></a>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row cadastroaluno">
+		    	<div class="col s12 m12">
+						<h4 class="card-title title-notas">Adicionando notas</h4>
+	      		<div class="card blue-grey darken-1">
+	        		<div class="card-content white-text">
+								<div class="row">
+									<form action="/adicionarnota" method="post">
+										<div class="row">
+										  <div class="input-field col s6">
+										    <select id="materia" name="materia">
+										      <option value="" disabled selected>Selecione uma matéria</option>
+										      {% for materia in materias %}
+														<option value="{{ materia.nome }}">{{ materia.nome }}</option>
+<!-- 														<option value="CES-22">CES-22</option>
+														<option value="CTC-21">CTC-21</option>
+														<option value="EEA-21">EEA-21</option>
+														<option value="EES-10">EES-10</option>
+														<option value="ELE-52 ">ELE-52</option> -->
+													{% endfor %}
+										    </select>
+										    <label>Materia</label>
+										  </div>
+										  <!-- <div class="input-field col s6">
+										    <select id="atividade" name="atividade">
+										      <option value="" disabled selected>Selecione a atividade relacionada</option>
+													<option value="p1">P1</option>
+													<option value="p2">P2</option>
+													<option value="p3">P3</option>
+													<option value="p4">P4</option>
+													<option value="lab1">Laboratório 1º bim</option>
+													<option value="lab2">Laboratório 2º bim</option>
+													<option value="compl1">Notas Complementares 1º bim</option>
+													<option value="compl2">Notas Complementares 2º bim</option>
+													<option value="exame">Exame</option>
+										    </select>
+										    <label>Atividade</label>
+										  </div> -->
+							      </div>
+
+
+							      <div class="row">
+							        <div class="input-field col s6">
+							          <input id="valor" name="valor" type="text" class="validate">
+							          <label for="first_name">Valor (xx.xx)</label>
+							        </div>
+							        <div class="input-field col s6">
+							          <input id="porcentagem" name="porcentagem" type="text" class="validate">
+							          <label for="last_name">Porcentagem da média bimestral (xx.xx)</label>
+							        </div>
+							      </div>
+										<button type="submit" class="btn btn-primary btn-salvar right btn-fimcadastro btn-lg btn-block">Salvar</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="red lighten-1">
+			<div class="container">
+			<p>Projeto 2° bim CES-22 <span>2018</span></p>
+			</div>
+		</footer>
+		<!-- JS -->
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/materialize.min.js') }}"></script>
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/materialize.js') }}"></script>
+	</body>
+</html>

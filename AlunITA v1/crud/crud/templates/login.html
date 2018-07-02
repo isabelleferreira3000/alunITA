@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>AlunITA</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK1.css') }}">
+</head>
+
+<body>
+	<!-- Formulário Login Senha -->
+	<section id="PageLogin" class="BackGr BackImage">
+		<!-- Cabeçalho do app -->
+		<div class="barra-principal valign-wrapper yellow darken-2">
+			<div class="container">
+				<a href="principal"><img src="../static/resources/logo2.png" class="logoCab" width="89.4px" height="48.8px"></a>
+			</div>
+		</div>
+
+		<div class="container">
+	    {% with messages = get_flashed_messages() %}
+	        {% if messages %} 
+	            <ul id="messages" class="list_unstyled">
+	            {% for message in messages %}
+	                <li class="alert alert-success">{{ message }}</li>
+	            {% endfor %}
+	            </ul>
+	        {% endif %}
+	    {% endwith %}
+	   </div>
+
+
+		<!-- Card p/ formulário -->
+		<div class="row">
+			<div class="margin-card">
+		    <div class="col">
+		      <div class="card blue-grey darken-1">
+		        <div class="card-content white-text">
+		          <span class="card-title">Acesso ao Portal</span>
+
+							<div class="box-login">
+								<form method="POST" action="/autenticar">
+									<fieldset>
+										<div class="form-group">
+											<div class="input-field col s12">
+							          <i class="material-icons prefix">face</i>
+							          <input type="text" id="autocomplete-input" class="autocomplete" name="usuario">
+							          <label for="autocomplete-input">Usuário</label>
+							        </div>
+										</div>
+
+										<div class="form-group">
+											<div class="input-field col s12">
+							          <i class="material-icons prefix">lock_outline</i>
+							          <input type="password" id="autocomplete-input" class="autocomplete" name="senha">
+							          <label for="autocomplete-input">Senha</label>
+							        </div>
+										</div>
+
+										<a href="#" class="login-forgot">Esqueci minha senha</a>
+						 
+										<input type="submit" value="Entrar" class="btn btn-primary btn-lg btn-block">
+										<p class="txt-center ls-login-signup">Não possui um usuário em AlunITA?
+										</p>
+											<a href="/cadastrousuario">Cadastre-se agora</a>
+									</fieldset>
+								</form>
+							</div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+	  </div>
+	</section>
+
+
+	<footer class="red lighten-1">
+		<div class="container">
+		<p>aaaa</p>
+		</div>
+	</footer>
+
+	<!-- JS -->	
+	<script type=text/javascript src="{{
+  url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type=text/javascript src="{{
+  url_for('static', filename='js/materialize.min.js') }}"></script>
+</body>
+</html>

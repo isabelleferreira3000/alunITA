@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8">
+	  <title>Principal | AlunITA</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK.css') }}">
+	</head>
+
+	<body>
+		<section id="DirecionamentoTelas" class="BackGr BackImage">
+			<!-- Cabeçalho do app -->
+			<div class="barra-principal valign-wrapper yellow darken-2">
+				<div class="container">
+					<a href="principal"><img src="../static/resources/logo2.png" class="logoCab" width="89.4px" height="48.8px"></a>
+				</div>
+			</div>
+			<div class="container">
+			<!-- Aviso (flash) de usuário loogado -->
+		  {% with messages = get_flashed_messages() %}
+		      {% if messages %} 
+		          <ul id="messages" class="list_unstyled">
+		          {% for message in messages %}
+		              <li class="alert alert-success">{{ message }}</li>
+		          {% endfor %}
+		          </ul>
+		      {% endif %}
+		  {% endwith %}
+				<p class="titulo-pagina">Portal do Aluno</p>
+				<div class="BlocoTotal">
+					<!-- Barra do perfil logado -->
+					<div class="profile-div z-depth-1">
+						<img src="../static/resources/profile.png" class="imgProfile" width="170px" height="170px">
+						<p class="nomeProfile profileCarac">{{ nomeLogin }}</p>
+						<p class="cursoProfile profileCarac">{{ cursoLogin }}</p>
+						<p class="semestreProfile profileCarac">{{ semestreLogin }}</p>
+						<a href="" class="profileCarac">Alterar informações</a>
+					</div>
+
+					<!-- Direcionamento novas telas -->
+					<div class="BlocoMaior">
+						<div class="BlocoMenu">
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">access_alarm</i><p class="descricao-icone">Horário semanal</p>
+								</a>
+							</div>
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">event</i><p class="descricao-icone">Agenda</p>
+								</a>
+							</div>
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">star_border</i><p class="descricao-icone">Lembretes</p>
+								</a>
+							</div>
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">subtitles</i><p class="descricao-icone">Mapa de faltas</p>
+								</a>
+							</div>
+						</div>
+						<div class="BlocoMenu">
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">book</i><p class="descricao-icone">Matérias</p>
+								</a>
+							</div>
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="notas">
+									<i class="medium material-icons icon-index">report</i><p class="descricao-icone">Notas</p>
+								</a>
+							</div>
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">people_outline</i><p class="descricao-icone">Professores</p>
+								</a>
+							</div>
+							<div class="btn-option z-depth-1 yellow darken-1">
+								<a class="btn-menus" href="">
+									<i class="medium material-icons icon-index">mood</i><p class="descricao-icone">Meus dados</p>
+								</a>
+							</div>
+						</div>   
+					</div>  
+				</div>	                                        
+		  </div>
+		</section>
+
+		<footer class="red lighten-1">
+			<div class="container">
+			<p>Projeto 2° bim CES-22 <span>2018</span></p>
+			</div>
+		</footer>
+
+		<!-- JS -->	
+		<script type=text/javascript src="{{
+	  url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script type=text/javascript src="{{
+	  url_for('static', filename='js/materialize.min.js') }}"></script>
+	</body>
+</html>

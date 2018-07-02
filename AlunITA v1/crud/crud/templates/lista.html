@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lista de Clientes</title>
+</head>
+<body>
+	<h1>Lista de Clientes</h1>
+	<hr>
+	<table border="4">
+		<tr>
+			<td>ID</td>
+			<td>Nome</td>
+			<td>Sobrenome</td>
+			<td>Usuário</td>
+			<td>Senha</td>
+			<td>E-mail</td>
+			<td>Curso</td>
+			<td>anoformacao</td>
+			<td>materia1</td>
+			<td>materia2</td>
+			<td>materia3</td>
+			<td>materia4</td>
+			<td>materia5</td>
+			<td>materia6</td>
+			<td>materia7</td>
+			<td>materia8</td>
+		</tr>
+		{% for usuario in usuarios %}
+		<tr>
+			<td>{{ usuario._id}}</td>
+			<td>{{ usuario.nomeNovoUsu}}</td>
+			<td>{{ usuario.sobrenomeNovoUsu}}</td>
+			<td>{{ usuario.nomeusuarioNovoUsu}}</td>
+			<td>{{ usuario.senhaNovoUsu}}</td>
+			<td>{{ usuario.emailNovoUsu}}</td>
+			<td>{{ usuario.cursoNovoUsu}}</td>
+			<td>{{ usuario.anoformacaoNovoUsu}}</td>
+			<td>{{ usuario.materia1}}</td>
+			<td>{{ usuario.materia2}}</td>
+			<td>{{ usuario.materia3}}</td>
+			<td>{{ usuario.materia4}}</td>
+			<td>{{ usuario.materia5}}</td>
+			<td>{{ usuario.materia6}}</td>
+			<td>{{ usuario.materia7}}</td>
+			<td>{{ usuario.materia8}}</td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

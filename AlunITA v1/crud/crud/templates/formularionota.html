@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8">
+	  <title>AlunITA</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK1.css') }}">
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>{{ titulo }}</h1>
+			<!-- Formulário -->
+			<form action="/adicionarnota" method="post">
+				<fieldset>
+					<label for="materia">Materia:</label>
+					<select name="materia" id="materia">
+						<option value="CES-12">CES-12</option>
+						<option value="CES-22">CES-22</option>
+						<option value="CTC-21">CTC-21</option>
+						<option value="EEA-21">EEA-21</option>
+						<option value="EES-10">EES-10</option>
+						<option value="ELE-52 ">ELE-52</option>
+					</select>
+					<label for="atividade">Atividade:</label>
+					<select name="atividade" id="atividade">
+						<option value="p1">P1</option>
+						<option value="p2">P2</option>
+						<option value="p3">P3</option>
+						<option value="p4">P4</option>
+						<option value="lab1">Laboratório 1º bim</option>
+						<option value="lab2">Laboratório 2º bim</option>
+						<option value="compl1">Notas Complementares 1º bim</option>
+						<option value="compl2">Notas Complementares 2º bim</option>
+						<option value="exame">Exame</option>
+					</select>
+					<label>
+						<span>Valor:</span>
+						<input type="text" name="valor" id="valor" size="5" maxlength="5" placeholder="xx.xx"> 
+					</label>
+					<span>Porcentagem da média bimestral:</span>
+						<input type="text" name="porcentagem" id="porcentagem" size="6" maxlength="6" placeholder="xx.xx%"> 
+					</label>
+					<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8">
+	  <title>Notas | AlunITA</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK12.css') }}">
+	</head>
+
+	<body>
+		<section id="DirecionamentoTelas" class="BackGr BackImage">
+			<!-- Cabeçalho do app -->
+			<div class="barra-principal valign-wrapper yellow darken-2">
+				<div class="container">
+					<a href="principal"><img src="../static/resources/logo2.png" class="logoCab" width="89.4px" height="48.8px"></a>
+				</div>
+			</div>
+			<div class="container">
+				<h4 class="card-title title-notas">Notas</h4>
+
+				<!-- Tabela de Notas -->
+				<table class="responsive-table z-depth-1 blue-grey lighten-4">
+					<thead>
+						<tr>
+							<th>Matéria</th>
+							<th>Média 1º bim</th>
+							<th>Média 2º bim</th>
+							<th>Média final</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- {% for materia in usuario %} -->
+						<tr>
+							<td>{{ usuario.materia1 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia2 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia3 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia4 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia5 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia6 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia7 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+						<tr>
+							<td>{{ usuario.materia8 }}</td>
+							<td>12</td>
+							<td>3</td>
+							<td>132</td>
+						</tr>
+					<!-- {% endfor %} -->
+					</tbody>
+				</table>
+
+				<a class="waves-effect waves-light btn right btn-adcnotas" href="formularionota"><i class="material-icons left">cloud</i>adicionar notas</a>
+			</div>
+		</section>
+
+		<footer class="red lighten-1">
+			<div class="container">
+			<p>aaaa</p>
+			</div>
+		</footer>
+		<!-- JS -->
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/materialize.min.js') }}"></script>
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/materialize.js') }}"></script>
+		  <script> 
+	</body>
+</html>
+
+<!-- 
+FORMULÁRIO:
+Matéria: selecionar com <option>
+Qual atividade?: selecionar com <option>
+	P1
+	P2
+	P3
+	P4
+	Laboratório 1º bimestre
+	Laboratório 2º bimestre
+	Notas complementares 1º bimestre
+	Notas complementares 2º bimestre
+	Exame
+Valor: campo numérico
+Porcentagem: campo numérico
+
+
+... Tabela ...
+Matéria: 
+Notas por bimestre: como?
+Média final!
+ -->

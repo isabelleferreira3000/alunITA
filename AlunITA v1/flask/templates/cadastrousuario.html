@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Cadastro | AlunITA</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 	<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK.css') }}">
+</head>
+
+<body>
+	<section id="DirecionamentoTelas" class="BackGr BackImage">
+		<!-- Cabeçalho do app -->
+		<div class="barra-principal valign-wrapper yellow darken-2">
+			<div class="container">
+				<a href="principal"><img src="../static/resources/logo2.png" class="logoCab" width="89.4px" height="48.8px"></a>
+			</div>
+		</div>
+
+		<div class="container">
+		  <div class="row cadastroaluno">
+		    <div class="col s12 m12">
+		      <div class="card blue-grey darken-1">
+		        <div class="card-content white-text">
+		          <!-- Formulário -->
+							<div class="row">
+
+						    <form method="POST" action="/cadastrandousuario" class="col s12">
+		          		<span class="card-title">Informações pessoais</span>
+						      <div class="row">
+						        <div class="input-field col s6">
+						          <input id="first_name" name="first_name" type="text" class="validate">
+						          <label for="first_name">Nome</label>
+						        </div>
+						        <div class="input-field col s6">
+						          <input id="last_name" name="last_name" type="text" class="validate">
+						          <label for="last_name">Sobrenome</label>
+						        </div>
+						      </div>
+						      <div class="row">
+						        <div class="input-field col s6">
+						          <input id="usuario_valido" name="usuario_valido" type="text" class="validate">
+						          <label for="usuario_valido">Nome de usuário</label>
+						          <!-- descriçãozinha embaixo falando o que é valido -->
+						        </div>	
+						        <div class="input-field col s6">
+						          <input id="password" name="password" type="password" class="validate">
+						          <label for="password">Senha</label>
+						        </div>
+						      </div>
+						      <div class="row emailclass">
+						        <div class="col s12">
+						          <!-- colocar logo no lugar de "conta gmail" -->
+						          <div class="input-field inline">
+				 		            <input placeholder="suaconta@gmail.com" id="email_inline" name="email_inline" type="email" class="validate">
+						          </div>
+						        </div>
+						      </div>
+								    <!-- <div class="file-field input-field">
+								      <div class="btn">
+								        <span>arquivo .jpg</span>
+								        <input type="file">
+								      </div>
+								      <div class="file-path-wrapper">
+								        <input placeholder="Inserir foto para imagem de perfil" id="img-perfil" name="img-perfil" class="file-path validate" type="text">
+								      </div>
+								    </div> -->
+		        			<span class="card-title">Informações do curso</span>
+						      <div class="row">
+									  <div class="input-field col s6">
+									    <select id="curso-select" name="curso-select">
+									      <option value="" disabled selected>Selecione seu curso</option>
+									      <option value="FUND">FUND</option>
+									      <option value="AER">AER</option>
+									      <option value="AESP">AESP</option>
+									      <option value="CIVIL">CIVIL</option>
+									      <option value="COMP">COMP</option>
+									      <option value="ELE">ELE</option>
+									      <option value="MEC">MEC</option>
+									    </select>
+									    <label>Curso</label>
+									  </div>
+									  <div class="input-field col s6">
+									    <select id="anoformacao-select" name="anoformacao-select">
+									      <option value="" disabled selected>Selecione seu ano de formação</option>
+									      <option value="2018">2018</option>
+									      <option value="2019">2019</option>
+									      <option value="2020">2020</option>
+									      <option value="2021">2021</option>
+									      <option value="2022">2022</option>
+									      <option value="2023">2023</option>
+									    </select>
+									    <label>Ano de formação</label>
+									  </div>
+						      </div>
+						      <div class="row">
+						      	<div class="input-field col s12">
+						          <span class="helper-text">Insira as matérias do semestre <span class="exemplomateria">como no formato do exemplo</span></span>
+<!-- 										  <div class="chips chips-placeholder">
+										  </div> -->
+											<div class="row">
+							        <div class="input-field col s1">
+							          <input id="nome-materia1" name="nome-materia1" type="text" placeholder="MAT-12">
+							          <label></label>
+							        </div>	
+							        <div class="input-field col s1">
+							          <input id="nome-materia2" name="nome-materia2" type="text">
+							          <label></label>
+							        </div>	
+							        <div class="input-field col s1">
+							          <input id="nome-materia3" name="nome-materia3" type="text">
+							          <label></label>
+							        </div>	
+							        <div class="input-field col s1">
+							          <input id="nome-materia4" name="nome-materia4" type="text">
+							          <label></label>
+							        </div>
+							        <div class="input-field col s1">
+							          <input id="nome-materia5" name="nome-materia5" type="text">
+							          <label></label>
+							        </div>
+							        <div class="input-field col s1">
+							          <input id="nome-materia6" name="nome-materia6" type="text">
+							          <label></label>
+							        </div>
+							        <div class="input-field col s1">
+							          <input id="nome-materia7" name="nome-materia7" type="text">
+							          <label></label>
+							        </div>
+							        <div class="input-field col s1">
+							          <input id="nome-materia8" name="nome-materia8" type="text">
+							          <label></label>
+							        </div>
+<!-- 							        <div class="input-field col s1">
+							          <input id="nome-materia9" name="nome-materia9" type="text">
+							          <label></label>
+							        </div>
+							        <div class="input-field col s1">
+							          <input id="nome-materia10" name="nome-materia10" type="text">
+							          <label></label>
+							        </div> -->
+									  </div>
+						      </div>
+						      <input type="submit" value="Finalizar" class="btn right btn-fimcadastro btn-primary btn-lg btn-block">					      
+						      
+						  	</div>
+						    </form>
+						  </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+	  </div>
+	</section>
+
+	<footer class="red lighten-1">
+		<div class="container">
+		<p>aaaa</p>
+		</div>
+	</footer>
+
+<!-- JS -->
+	<script type=text/javascript src="{{
+  url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type=text/javascript src="{{
+  url_for('static', filename='js/materialize.min.js') }}"></script>
+	<script type=text/javascript src="{{
+  url_for('static', filename='js/materialize.js') }}"></script>
+  <script>  	
+		// $('.chips').chips();
+
+		// $('.chips-placeholder').chips({
+		// 	placeholder: 'MAT-12',
+		// });
+  </script>
+</body>
+</html>

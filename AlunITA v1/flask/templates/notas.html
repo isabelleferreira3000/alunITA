@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8">
+	  <title>Notas | AlunITA</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='material.css') }}">
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='styleAlunitaOK.css') }}">
+	</head>
+
+	<body>
+		<section id="DirecionamentoTelas" class="BackGr BackImage">
+			<!-- Cabeçalho do app -->
+			<div class="barra-principal valign-wrapper yellow darken-2">
+				<div class="container">
+					<a href="principal"><img src="../static/resources/logo2.png" class="logoCab" width="89.4px" height="48.8px"></a>
+				</div>
+			</div>
+			<div class="container">
+				<h4 class="card-title title-notas">Notas</h4>
+
+				<!-- Tabela de Notas -->
+				<table class="responsive-table z-depth-1 blue-grey lighten-4">
+					<thead>
+						<tr>
+							<th>Matéria</th>
+							<th>Média 1º bim</th>
+							<th>Média 2º bim</th>
+							<th>Média final</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for materia in materias %}
+						<tr>
+							<td>{{ materia.nome }}</td>
+							<td>{{ materia.media1 }}</td>
+							<td>{{ materia.media2 }}</td>
+							<td>{{ materia.mediafinal }}</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+
+				<a class="waves-effect waves-light btn right btn-adcnotas" href="formularionota"><i class="material-icons left">cloud</i>adicionar notas</a>
+			</div>
+		</section>
+
+		<footer class="red lighten-1">
+			<div class="container">
+			<p>Projeto 2° bim CES-22 <span>2018</span></p>
+			</div>
+		</footer>
+		<!-- JS -->
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/materialize.min.js') }}"></script>
+			<script type=text/javascript src="{{
+		  url_for('static', filename='js/materialize.js') }}"></script>
+	</body>
+</html>
